@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Demo Login</title>
+  <style>
+    body { font-family: Arial, sans-serif; display:flex; min-height:100vh; align-items:center; justify-content:center; background:#f7f7f7;}
+    .card { background:#fff; padding:24px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.08); width:360px; }
+    .card h1 { font-size:20px; margin:0 0 16px; }
+    .field { margin-bottom:12px; }
+    .field label { display:block; font-size:13px; margin-bottom:6px; }
+    .field input { width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; }
+    .actions { display:flex; gap:8px; margin-top:12px; }
+    #submitBtn { background:#0e7afe; color:#fff; border:0; padding:10px; border-radius:8px; }
+    #resetBtn { background:#f0f0f0; border:0; padding:10px; border-radius:8px; }
+    #error { color:#b00020; margin-top:10px; display:none; }
+    #success { color:#2e7d32; margin-top:10px; display:none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Login</h1>
+    <form id="loginForm" onsubmit="return onSubmit(event)">
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" minlength="6" required />
+      </div>
+      <div class="actions">
+        <button id="submitBtn" type="submit">Sign in</button>
+        <button id="resetBtn" type="reset" onclick="clearMsg()">Reset</button>
+      </div>
+      <div id="error">Invalid email or password</div>
+      <div id="success">Success! Redirecting to /dashboard...</div>
+    </form>
+  </div>
+
+  <script>
+    function clearMsg(){
+      document.getElementById('error').style.display = 'none';
+      document.getElementById('success').style.display = 'none';
+    }
+    function onSubmit(e){
+      e.preventDefault();
+      clearMsg();
+      const email = document.getElementById('email').value.trim();
+      const pass = document.getElementById('password').value;
+      if(email === 'user@ex.com' && pass === '12345678'){
+        document.getElementById('success').style.display = 'block';
+        setTimeout(()=> { window.location.href = '/dashboard'; }, 200);
+      } else {
+        document.getElementById('error').style.display = 'block';
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>

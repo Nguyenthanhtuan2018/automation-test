@@ -1,0 +1,16 @@
+{
+  "name": "auto-gen-demo",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "gen": "ts-node tools/gen-tests.ts",
+    "test": "playwright test",
+    "serve": "npx http-server . -p 8080"
+  }
+}

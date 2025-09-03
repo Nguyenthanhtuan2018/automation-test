@@ -1,0 +1,8 @@
+{
+  "page.login": "/index.html",
+  "email": "#email",
+  "password": "#password",
+  "submit": "#submitBtn",
+  "error": "#error",
+  "success": "#success"
+}
