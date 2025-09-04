@@ -254,5 +254,3 @@ Giải pháp **Auto-Gen UI Test** giúp:
 Nếu cần, có thể **đóng gói** thành template nội bộ (starter kit) để đội ngũ áp dụng cho nhiều dự án khác nhau.
 
 ---
-
-> Cần bản README tiếng Anh/nhật để trình bày đối tác? Mình có thể chuyển ngữ nguyên bản này sang EN/JP trong 1 file riêng.
